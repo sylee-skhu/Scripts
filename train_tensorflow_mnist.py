@@ -39,7 +39,7 @@ def main():
         (tf.cast(mnist_images[..., tf.newaxis] / 255.0, tf.float32),
                  tf.cast(mnist_labels, tf.int64))
     )
-    dataset = dataset.repeat().shuffle(10000).batch(128)
+    dataset = dataset.repeat().shuffle(10000).batch(1024)
 
     mnist_model = tf.keras.Sequential([
         tf.keras.layers.Conv2D(32, [3, 3], activation='relu'),
